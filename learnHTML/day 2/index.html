@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links and Lists</title>
+    <style>
+        /* internal css */
+        .parent{
+            display: flex;
+            gap: 20px;
+        }
+        .child{
+            width: 50%;
+        }
+        .child1{
+            background-color: antiquewhite;
+        }
+        .child2{
+            background-color: aqua;
+        }
+        @media screen and (max-width: 992px) {
+            .parent{
+                flex-direction: column;
+            }
+            .child{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Links and Lists</h1>
+    <!-- layout aaplied -->
+    <!-- <div class="parent"> -->
+    <div class="parent">
+        <!-- <div style="width:50%; background:orange""> -->
+        <div class="child child1">
+            <h2>Order List</h2>
+            <h3>Names of Fruits</h3>
+            <ol type="I">
+                <li>Mango</li>
+                <li>Apple</li>
+                <li>Orange</li>
+            </ol>
+        </div>
+        <!-- <div style="width:50%; background-color: aqua;""> -->
+        <div class="child child2">
+            <h2>Un Order List</h2>
+            <h3>Names of Fruits</h3>
+            <ul type="circle">
+                <li>Mango</li>
+                <li>Apple</li>
+                <li>Orange</li>
+            </ul>
+        </div>
+    </div>
+    <h2>Names of Fruits</h2>
+    <ol type="i">
+        <li>Mango</li>
+        <li>Apple</li>
+        <li>Orange</li>
+    </ol>
+    <h2>Names of Fruits</h2>
+    <ul type="square">
+        <li>Mango</li>
+        <li>Apple</li>
+        <li>Orange</li>
+    </ol>
+</body>
+</html>
