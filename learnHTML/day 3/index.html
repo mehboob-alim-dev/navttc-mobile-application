@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table{
+        width:100%;
+        border-collapse: collapse;
+    }
+    th,td{
+        text-align: center;
+        border: 1px solid black;
+        padding:15px
+    }
+    tr:hover{
+        background-color: #D6EEEE;
+    }
+    /* tr:first-child{
+        background-color: aqua;
+    }
+    tr:nth-child(2){
+        background-color: antiquewhite;
+    } */
+    /* tr:nth-child(odd){
+        background-color: aqua;
+    } */
+     button{
+        padding: 15px;
+        border: 2px solid aqua;
+        background-color: transparent;
+        transition: all 1s ease-in-out;
+     }
+     button:hover{
+        background-color:aqua;
+        color: #fff;
+     }
+    </style>
+</head>
+<body>
+    <h1>HTML Table, Block and Inline Elements</h1>
+    <h2>Students Record</h2>
+    <table>
+       <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Roll No.</th>
+            <th>Class</th>
+        </tr>
+       </thead>
+     <tbody>
+        <tr>
+            <td>1</td>
+            <td>Babar azam</td>
+            <td>12345</td>
+            <td>BSCS</td>
+        </tr>
+        <tr>
+            <td rowspan="2">2</td>
+            <td rowspan="2">Muhammad Rizwan</td>
+            <td rowspan="2">123</td>
+            <td>BSSE</td>
+        </tr>
+        <tr>
+            <td>BSIT</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Muhammad Taimoor</td>
+            <td colspan="2">10</td>
+        </tr>
+     </tbody>
+    </table>
+    <h2>Vertical Table</h2>
+    <table>
+        <tr>
+        <th>Firstname</th>
+        <td style="width: 50%;">Jill</td>
+        <td>Eve</td>
+        </tr>
+        <tr>
+        <th>Lastname</th>
+        <td >Smith</td>
+        <td>Jackson</td>
+        </tr>
+        <tr>
+        <th>Age</th>
+        <td>94</td>
+        <td>50</td>
+        </tr>
+        <tr>
+        <th>Age</th>
+        <td>94</td>
+        <td>50</td>
+        </tr>
+    </table>
+    <h2>Col Group Table</h2>
+    <table style="width: 100%;">
+        <colgroup>
+          <col span="2" >
+          <col span="3" style="background-color: pink">
+        </colgroup>
+      <tr>
+      <th>MON</th>
+      <th>TUE</th>
+      <th>WED</th>
+      <th>THU</th>
+      <th>FRI</th>
+      <th>SAT</th>
+      <th>SUN</th>
+      </tr>
+      <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      </tr>
+      <tr>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+      </tr>
+      <tr>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+      <td>21</td>
+      </tr>
+      <tr>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+      <td>25</td>
+      <td>26</td>
+      <td>27</td>
+      <td>28</td>
+      </tr>
+      </table>
+
+      <h2 style="text-align: center">Block and Inline Elements</h2>
+      <div style="background-color: aquamarine; padding:15px; margin-bottom: 30px;">Block</div>
+      <h3 style="background-color: bisque;">All Heading</h3>
+      <p style="background-color: greenyellow;">Paragraph</p>
+
+      <span style="background-color: antiquewhite; padding:15px">Inline</span>
+      <a href="https://github.com/mehboob-alim-dev/navtacc-mobile-application" target="_blank">Anchor tab</a>
+      <button>Click Me</button>
+    </body>
+</html>
