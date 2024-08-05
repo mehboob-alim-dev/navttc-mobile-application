@@ -1,0 +1,54 @@
+/* External stylesheet */
+
+/* Syntax of CSS */
+/* selector{
+    property: value;
+} */
+
+/* universal selector */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* tag selector */
+h1{
+    font-style: italic;
+    color: blueviolet !important;
+}
+
+/* class selector */
+.heading2{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* id selector */
+#primary-heading{
+    font-size: 70px;
+    font-weight: 500;
+}
+.bg-primary{
+    margin-bottom: 20px;
+    background-color: aquamarine;
+    color: white;
+}
+.bg-secondary{
+    margin-top: 20px;
+    background-color: antiquewhite;
+    color: red;
+}
+
+/* grouping selector */
+h1, h2 {
+    text-align: center;
+  }
+.bg-primary, .bg-secondary {
+    text-align: center;
+  }
+
+  /* combinator selector */
+  .parent h2{
+    color: blue;
+  }
