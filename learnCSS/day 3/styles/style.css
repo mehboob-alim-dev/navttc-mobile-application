@@ -1,0 +1,66 @@
+nav a{
+    text-transform: uppercase;
+    text-decoration: none;
+}
+h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    font-style: normal;
+
+    /* text properties */
+
+    text-decoration: overline;
+    /* text-decoration: underline; */
+    /* text-decoration: line-through; */
+
+    text-transform: uppercase;
+    /* text-transform: capitalize; */
+    /* text-transform: lowercase; */
+
+    letter-spacing: 50px;
+    line-height: 100px;
+
+    text-shadow: 2px 2px 8px rebeccapurple;
+
+    text-indent: 30%;
+
+}
+
+
+li{
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    font-style: normal;
+    color: aqua;
+}
+
+
+/* combinator selectors */
+
+/* decendent selector */
+
+/* .navbar p{
+    color: blue;
+} */
+
+/* child selector */
+.navbar > p{
+    color: blue;
+}
+
+/* Adjacent sibling selector */
+div + p {
+    color: aqua !important;
+}
+/* general sibling selector */
+
+div ~ p {
+    color: orange;
+}
+
+section div{
+    font-size: 40px;
+    font-weight: 700;
+}
