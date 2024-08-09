@@ -40,20 +40,17 @@ h1{
     padding:50px;
     background-color: aqua;
     /* max-width: 100px; */
-    width: 45%;
     max-height: 150px;
 }
 .parent > .child2{
     padding:50px;
     background-color: orange;
     /* max-width: 100px; */
-    width: 45%;
     max-height: 150px;
 }
 .parent > .child3{
     padding:50px;
     background-color: blue;
     /* max-width: 100px; */
-    width: 45%;
     max-height: 150px;
 }
