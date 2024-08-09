@@ -1,0 +1,59 @@
+h1{
+    text-align: center;
+    font-size: 64px;
+    font-weight: 700;
+    color: blueviolet;
+}
+
+.parent{
+    height: 300px;
+    border: 2px solid greenyellow;
+    display: flex;
+
+    /* flex directions Start*/
+
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+    /* flex directions End*/
+
+    /* Horizontal Alignment */
+
+    /* justify-content: end; */
+    /* justify-content: center; */
+    justify-content: space-between;
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+   
+    /* Vertical Alignment */
+
+    /* default  */
+    /* align-items: start; */
+
+    /* align-items: end; */
+    /* align-items: center; */
+    /* align-items: stretch; */
+
+    gap: 20px;
+}
+.parent > .child1{
+    padding:50px;
+    background-color: aqua;
+    /* max-width: 100px; */
+    width: 45%;
+    max-height: 150px;
+}
+.parent > .child2{
+    padding:50px;
+    background-color: orange;
+    /* max-width: 100px; */
+    width: 45%;
+    max-height: 150px;
+}
+.parent > .child3{
+    padding:50px;
+    background-color: blue;
+    /* max-width: 100px; */
+    width: 45%;
+    max-height: 150px;
+}
