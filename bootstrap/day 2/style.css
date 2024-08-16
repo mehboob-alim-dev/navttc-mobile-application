@@ -1,0 +1,40 @@
+:root {
+    --primary: #E0F8F2;
+    --secondary: #FF6D2C;
+    --application-font: "Inter", sans-serif; 
+}
+
+h1{
+    font-family: var(--application-font);
+    font-size: 82px;
+    font-weight: 700;
+    line-height: 96px;
+    text-align: left;
+}
+p{
+    font-family: var(--application-font);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 34px;
+
+}
+.custom-btn{
+    padding: 22px 66.05px 22px 65px;
+    border-radius: 15px;
+    border: 2px solid #2E2F35;
+    background-color: var(--secondary);
+}
+.hero-section{
+    padding: 128px 0;
+    background-color: var(--primary);
+    position: relative;
+}
+.hero-section h1 > span{
+    font-weight: 400;
+    color: #009387;
+}
+.hero-section img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
