@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Javascript Introduction</h1>
+    <h2>This is heading</h2>
+    <p id="myParagraph">This is paragraph</p>
+    <p>This is another paragraph</p>
+    <button onclick={changeColorHandler()}>Change Color</button>
+    <!-- internal javascript -->
+    <script>
+        document.write("<u><h3>this is another heading</h3></u>")
+        function changeColorHandler(){
+            alert("function call")
+            var myElement = document.getElementsByTagName("p")[1]
+            myElement.style.color = "purple";
+            console.log("myElement",myElement);
+        }
+        var xyz = document.getElementById("myParagraph");
+        xyz.style.fontSize = "50px";
+        console.log("first paragraph", xyz);
+    </script>
+</body>
+</html>
