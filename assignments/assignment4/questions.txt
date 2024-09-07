@@ -1,0 +1,55 @@
+Variable Declaration and Assignment
+1.	Declare a variable named age and assign it the value 25.
+2.	Declare a constant named PI and assign it the value 3.14.
+3.	Reassign the value of a let variable called count from 10 to 20.
+4.	Declare a var variable called username and assign it a string value "JohnDoe".
+5.	Declare a constant birthYear and try to change its value. What happens?
+6.	Create a variable named isStudent and assign it a boolean value true.
+7.	Declare a variable without assigning any value. What is its type?
+8.	Declare a variable using let inside a block and try to access it outside the block. What happens?
+9.	Create two variables, firstName and lastName, and assign them your first and last name.
+10.	Declare a var variable, assign it a value, then declare the same variable again. What happens?
+Arithmetic Operators
+11.	Write a code snippet to add two numbers, a and b.
+12.	Write a code to subtract one number y from another number x.
+13.	Multiply two numbers m and n and store the result in a variable.
+14.	Divide 100 by 5 and store the result in a variable result.
+15.	Calculate the remainder of 25 divided by 4 using the modulus operator.
+16.	Write a code snippet to increment a variable counter by 1.
+17.	Decrement a variable count by 1 and display the result.
+18.	Write a code snippet to add 5 to a variable total.
+19.	Subtract 10 from a variable balance using the -= operator.
+20.	Write a code to square a number num using the multiplication operator.
+Functions
+21.	Write a function greet that takes a name as a parameter and returns a greeting message.
+22.	Create a function add that takes two numbers as arguments and returns their sum.
+23.	Write a function subtract that takes two numbers and returns the difference.
+24.	Write a function multiply that returns the product of two numbers.
+25.	Write a function divide that returns the quotient of two numbers.
+26.	Create a function square that takes a number as an argument and returns its square.
+27.	Write a function isEven that checks if a number is even.
+28.	Write a function max that takes two numbers and returns the larger one.
+29.	Create a function isAdult that checks if a person is 18 or older.
+30.	Write a function calculateArea that calculates the area of a rectangle.
+Conditions
+31.	Write an if-else statement to check if a number num is positive or negative.
+32.	Create a conditional statement to check if a variable x is greater than 10.
+33.	Write an if-else statement to check if a number is odd or even.
+34.	Create a code snippet that checks if a string name is equal to "John".
+35.	Write a code snippet to check if two numbers a and b are equal.
+36.	Write a code to check if a number is divisible by 5 and 3.
+37.	Use a conditional statement to check if a person is eligible to vote (age 18 or older).
+38.	Write a nested if-else statement to check if a number is positive, negative, or zero.
+39.	Create a switch statement to print the day of the week based on a number from 1 to 7.
+40.	Write a code snippet to check if a variable isLoggedIn is true or false.
+String Methods
+41.	Declare a string variable greeting with the value "Hello, World!".
+42.	Write a code to find the length of the string "JavaScript".
+43.	Convert the string "javascript" to uppercase.
+44.	Convert the string "HELLO WORLD" to lowercase.
+45.	Write a code to check if the string "JavaScript" includes the substring "Script".
+46.	Extract the word "World" from the string "Hello, World!".
+47.	Replace the word "Hello" with "Hi" in the string "Hello, World!".
+48.	Write a code snippet to concatenate two strings "Hello" and "World".
+49.	Split the string "apple,banana,orange" into an array of fruits.
+50.	Trim the whitespace from both ends of the string " JavaScript ".
