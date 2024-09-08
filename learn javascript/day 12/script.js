@@ -40,3 +40,7 @@ const vichels = ["Audi", "hilux"];
 const [car, truck] = vichels;
 
 console.log(car,truck);
+
+// git add .
+// git commit -m "learning about array soring and array destructuring"
+// git push
