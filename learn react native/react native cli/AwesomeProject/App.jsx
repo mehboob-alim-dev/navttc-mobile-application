@@ -6,8 +6,8 @@
  */
 
 import React, {useState} from 'react';
-import { SafeAreaView,FlatList,Item, Switch, Image, View, Text, TouchableOpacity, TextInput, StyleSheet, Button } from 'react-native';
-// import {ListData} from "./src/constants/ListData"
+import { SafeAreaView,ScrollView,FlatList,SectionList,Item, Switch, Image, View, Text, TouchableOpacity, TextInput, StyleSheet, Button } from 'react-native';
+import {ListData} from "./src/constants/ListData"
 const CustomButton = ({ title, onPress, className }) => {
   // Map className to corresponding style
   const buttonStyle = className === 'simpleBtn' ? styles.simpleBtn : styles.customBtn;
@@ -17,19 +17,50 @@ const CustomButton = ({ title, onPress, className }) => {
     </TouchableOpacity>
   );
 };
-
+const DATA = [
+  {
+    title: 'Main dishes',
+    data: ['Pizza', 'Burger', 'Risotto'],
+  },
+  {
+    title: 'Sides',
+    data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+  },
+  {
+    title: 'Drinks',
+    data: ['Water', 'Coke', 'Beer'],
+  },
+  {
+    title: 'Desserts',
+    data: ['Cheese Cake', 'Ice Cream'],
+  },
+];
+const ListItem = ({title,index}) => (
+  <View style={styles.item} key={index}>
+    <Text style={styles.title}>{title}</Text>
+  </View>
+);
 const App = () => {
   const [userName, setUserName] = useState("Babar Azam");
   const [className, setClassName] = useState("");
   const [isEnabled, setIsEnabled] = useState(false);
+  const [task, setTask] = useState({ id: '', title: '' });
+  const [myTasks, setMyTasks] = useState([]);
+
   const toggleSwitch = () => setIsEnabled(!isEnabled);
   function onChangeHandler(xyz){
     setClassName(xyz);
   }
-
+console.log("myTasks",myTasks)
   // import images
   const logo = require('./src/assets/images/logo.png');
-  console.log("isEnabled",isEnabled)
+  // console.log("isEnabled",isEnabled)
+  const handleAddTask = () => {
+    if (task.id && task.title) {
+      setMyTasks([...myTasks, task]); // Add the new task to the list
+      setTask({ id: '', title: '' }); // Clear input fields after adding
+    }
+  };
   return(
   <SafeAreaView style={styles.container}>
     <View>
@@ -37,7 +68,7 @@ const App = () => {
         style={styles.logo}
         source={logo}
       />
-      <Text style={styles.title}>
+      {/* <Text style={styles.title}>
         The title and onPress handler are required. It is recommended to set
         accessibilityLabel to help make your app usable by everyone.
       </Text>
@@ -50,18 +81,43 @@ const App = () => {
         ios_backgroundColor="#3e3e3e"
         onValueChange={toggleSwitch}
         value={isEnabled}
-      />
-      {/* <FlatList
-        data={DATA}
-        renderItem={({item}) => <Item title={item.title} />}
-        keyExtractor={item => DATA.id}
       /> */}
-      <CustomButton title="Custom Button" onPress={() => console.log("Custom button clicked")} className="customBtn" />
+      <TextInput
+        value={task.id}
+        placeholder="Add Task Id"
+        style={styles.input}
+        onChangeText={(inputText) => setTask({ ...task, id: inputText })}
+      />
+      <TextInput
+        value={task.title}
+        placeholder="Add Task"
+        style={styles.input}
+        onChangeText={(inputText) => setTask({ ...task, title: inputText })}
+      />
+      <Button title="Add" onPress={handleAddTask} />
+       <FlatList
+        data={myTasks}
+        renderItem={({item,index}) => <ListItem title={item.title} key={index}/>}
+        keyExtractor={item => item.id}
+      />
+      <SectionList
+      sections={DATA}
+      keyExtractor={(item, index) => item + index}
+      renderItem={({item}) => (
+        <View style={styles.item}>
+          <Text style={styles.title}>{item}</Text>
+        </View>
+      )}
+      renderSectionHeader={({section: {title}}) => (
+        <Text style={styles.header}>{title}</Text>
+      )}
+    />
+      {/* <CustomButton title="Custom Button" onPress={() => console.log("Custom button clicked")} className="customBtn" />
       <CustomButton title="Simple Button" onPress={() => console.log("Simple button clicked")} className="simpleBtn" />
       <TouchableOpacity style={styles.button} onPress={()=>console.log("button")}>
         <Text>Press Here</Text>
       </TouchableOpacity>
-      <Button title="Click me" onPress={()=>console.log("function called")}/>
+      <Button title="Click me" onPress={()=>console.log("function called")}/> */}
     </View>
   </SafeAreaView>
 );
@@ -76,6 +132,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 80,
     height: 80,
+    borderRadius: 50,
     marginLeft: "auto",
     marginRight: "auto",
     marginBottom: 20,
