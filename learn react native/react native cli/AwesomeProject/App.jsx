@@ -4,122 +4,54 @@
  *
  * @format
  */
-
+import { enableScreens } from 'react-native-screens';
 import React, {useState} from 'react';
 import { SafeAreaView,ScrollView,FlatList,SectionList,Item, Switch, Image, View, Text, TouchableOpacity, TextInput, StyleSheet, Button } from 'react-native';
-import {ListData} from "./src/constants/ListData"
-const CustomButton = ({ title, onPress, className }) => {
-  // Map className to corresponding style
-  const buttonStyle = className === 'simpleBtn' ? styles.simpleBtn : styles.customBtn;
+import List from './src/components/List';
+import { CustomButton } from './src/components/CustomBtn';
+import Counter from './src/components/Counter';
+import TextTicker from 'react-native-text-ticker'
+// import {ListData} from "./src/constants/ListData"
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import HomeScreen from './src/screens/HomeScreen';
+function HomeScreen() {
   return (
-    <TouchableOpacity style={buttonStyle} onPress={onPress}>
-      <Text style={styles.buttonText}>{title}</Text>
-    </TouchableOpacity>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
   );
-};
-const DATA = [
-  {
-    title: 'Main dishes',
-    data: ['Pizza', 'Burger', 'Risotto'],
-  },
-  {
-    title: 'Sides',
-    data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
-  },
-  {
-    title: 'Drinks',
-    data: ['Water', 'Coke', 'Beer'],
-  },
-  {
-    title: 'Desserts',
-    data: ['Cheese Cake', 'Ice Cream'],
-  },
-];
-const ListItem = ({title,index}) => (
-  <View style={styles.item} key={index}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
+}
+function DetailsScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen</Text>
+    </View>
+  );
+}
+enableScreens();
+const Stack = createNativeStackNavigator();
 const App = () => {
   const [userName, setUserName] = useState("Babar Azam");
   const [className, setClassName] = useState("");
   const [isEnabled, setIsEnabled] = useState(false);
-  const [task, setTask] = useState({ id: '', title: '' });
-  const [myTasks, setMyTasks] = useState([]);
+ 
 
   const toggleSwitch = () => setIsEnabled(!isEnabled);
   function onChangeHandler(xyz){
     setClassName(xyz);
   }
-console.log("myTasks",myTasks)
   // import images
   const logo = require('./src/assets/images/logo.png');
   // console.log("isEnabled",isEnabled)
-  const handleAddTask = () => {
-    if (task.id && task.title) {
-      setMyTasks([...myTasks, task]); // Add the new task to the list
-      setTask({ id: '', title: '' }); // Clear input fields after adding
-    }
-  };
+ 
   return(
-  <SafeAreaView style={styles.container}>
-    <View>
-    <Image
-        style={styles.logo}
-        source={logo}
-      />
-      {/* <Text style={styles.title}>
-        The title and onPress handler are required. It is recommended to set
-        accessibilityLabel to help make your app usable by everyone.
-      </Text>
-      <TextInput value={userName} placeholder="Enter Username" style={styles.input} onChangeText={(inputText)=>setUserName(inputText)}/>
-      <TextInput value={className} placeholder="Enter ClassName" style={styles.input} onChangeText={onChangeHandler}/>
-      <TextInput value={className} placeholder="Password" style={styles.input} onChangeText={onChangeHandler} secureTextEntry={true}/>
-      <Switch
-        trackColor={{false: '#767577', true: '#81b0ff'}}
-        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      /> */}
-      <TextInput
-        value={task.id}
-        placeholder="Add Task Id"
-        style={styles.input}
-        onChangeText={(inputText) => setTask({ ...task, id: inputText })}
-      />
-      <TextInput
-        value={task.title}
-        placeholder="Add Task"
-        style={styles.input}
-        onChangeText={(inputText) => setTask({ ...task, title: inputText })}
-      />
-      <Button title="Add" onPress={handleAddTask} />
-       <FlatList
-        data={myTasks}
-        renderItem={({item,index}) => <ListItem title={item.title} key={index}/>}
-        keyExtractor={item => item.id}
-      />
-      <SectionList
-      sections={DATA}
-      keyExtractor={(item, index) => item + index}
-      renderItem={({item}) => (
-        <View style={styles.item}>
-          <Text style={styles.title}>{item}</Text>
-        </View>
-      )}
-      renderSectionHeader={({section: {title}}) => (
-        <Text style={styles.header}>{title}</Text>
-      )}
-    />
-      {/* <CustomButton title="Custom Button" onPress={() => console.log("Custom button clicked")} className="customBtn" />
-      <CustomButton title="Simple Button" onPress={() => console.log("Simple button clicked")} className="simpleBtn" />
-      <TouchableOpacity style={styles.button} onPress={()=>console.log("button")}>
-        <Text>Press Here</Text>
-      </TouchableOpacity>
-      <Button title="Click me" onPress={()=>console.log("function called")}/> */}
-    </View>
-  </SafeAreaView>
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Details" component={DetailsScreen} />
+    </Stack.Navigator>
+  </NavigationContainer>
 );
 
 }
