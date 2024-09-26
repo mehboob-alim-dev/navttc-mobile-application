@@ -4,33 +4,14 @@
  *
  * @format
  */
-import { enableScreens } from 'react-native-screens';
+
 import React, {useState} from 'react';
 import { SafeAreaView,ScrollView,FlatList,SectionList,Item, Switch, Image, View, Text, TouchableOpacity, TextInput, StyleSheet, Button } from 'react-native';
 import List from './src/components/List';
 import { CustomButton } from './src/components/CustomBtn';
 import Counter from './src/components/Counter';
-import TextTicker from 'react-native-text-ticker'
-// import {ListData} from "./src/constants/ListData"
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import HomeScreen from './src/screens/HomeScreen';
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
-function DetailsScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-    </View>
-  );
-}
-enableScreens();
-const Stack = createNativeStackNavigator();
+import TextTicker from 'react-native-text-ticker';
+import Hooks from './src/components/Hooks';
 const App = () => {
   const [userName, setUserName] = useState("Babar Azam");
   const [className, setClassName] = useState("");
@@ -46,12 +27,9 @@ const App = () => {
   // console.log("isEnabled",isEnabled)
  
   return(
-    <NavigationContainer>
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Details" component={DetailsScreen} />
-    </Stack.Navigator>
-  </NavigationContainer>
+    <>
+      <Hooks title="Hooks"/>
+    </>
 );
 
 }
