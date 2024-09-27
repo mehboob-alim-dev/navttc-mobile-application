@@ -12,6 +12,11 @@ import { CustomButton } from './src/components/CustomBtn';
 import Counter from './src/components/Counter';
 import TextTicker from 'react-native-text-ticker';
 import Hooks from './src/components/Hooks';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+
+const Stack = createNativeStackNavigator();
+
 const App = () => {
   const [userName, setUserName] = useState("Babar Azam");
   const [className, setClassName] = useState("");
@@ -28,7 +33,7 @@ const App = () => {
  
   return(
     <>
-      <Hooks title="Hooks"/>
+      <Hooks/>
     </>
 );
 
