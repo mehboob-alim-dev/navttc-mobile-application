@@ -14,14 +14,24 @@ import TextTicker from 'react-native-text-ticker';
 import Hooks from './src/components/Hooks';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import AndroidComponents from './src/components/AndroidComponents';
+// import { enableFreeze } from 'react-native-screens';
+// enableFreeze(true);
 
 const Stack = createNativeStackNavigator();
-
+const Home = () => {
+  return (
+    <>
+    <View>
+      <Text>Home Page</Text>
+    </View>
+    </>
+  )
+}
 const App = () => {
   const [userName, setUserName] = useState("Babar Azam");
   const [className, setClassName] = useState("");
   const [isEnabled, setIsEnabled] = useState(false);
- 
 
   const toggleSwitch = () => setIsEnabled(!isEnabled);
   function onChangeHandler(xyz){
@@ -33,7 +43,13 @@ const App = () => {
  
   return(
     <>
-      <Hooks/>
+      <AndroidComponents data="data"/>
+      {/* <Hooks/> */}
+      {/* <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
+      </NavigationContainer> */}
     </>
 );
 
